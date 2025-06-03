@@ -12,7 +12,7 @@ def number_of_bulletts(level_of_difficulty, chamber):
     i = 1
     while level_of_difficulty != True:
         if level_of_difficulty == '1':
-            chamber.append(, 1)
+            chamber.append(1, i)
         elif level_of_difficulty == '2':
             for b in range(2):
                 chamber.append(1, i)
@@ -25,6 +25,7 @@ def number_of_bulletts(level_of_difficulty, chamber):
             for b in range(4):
                 chamber.insert(1, i)
                 i+=1
+            print(chamber)
         elif level_of_difficulty == '5':
             for b in range(5):
                 chamber.insert(1, i)
