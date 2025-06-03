@@ -41,4 +41,5 @@ def intro():
 
 
 level_of_difficulty = difficulty()
-number_of_bulletts(level_of_difficulty, bullett_chamber)
+chamber = bullett_chamber()
+number_of_bulletts(level_of_difficulty, chamber)
