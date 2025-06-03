@@ -11,28 +11,12 @@ def bullett_chamber():
 def number_of_bulletts(level_of_difficulty, chamber):
     i = 1
     while level_of_difficulty != True:
-        if level_of_difficulty == '1':
-            chamber.append(1, i)
-        elif level_of_difficulty == '2':
-            for b in range(2):
-                chamber.append(1, i)
-                i+=1
-        elif level_of_difficulty == '3':
-            for b in range(3):
-                chamber.append(1, i)
-                i+=1
-        elif level_of_difficulty == '4':
-            for b in range(4):
-                chamber.insert(1, i)
-                i+=1
-            print(chamber)
-        elif level_of_difficulty == '5':
-            for b in range(5):
-                chamber.insert(1, i)
-                i+=1
+        num = int(level_of_difficulty)
+        for b in range(num):
+            chamber.insert(1, i)
+            i+=1
         else:
             print("That's not a number. ")
-            level_of_difficulty == False
         
 
 
