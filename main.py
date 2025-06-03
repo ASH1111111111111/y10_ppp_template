@@ -27,7 +27,7 @@ def number_of_bulletts(level_of_difficulty, chamber):
                 i+=1
         elif level_of_difficulty == '5':
             for b in range(5):
-                chamber.append(i, 1)
+                chamber.insert(i, 1)
                 i+=1
         else:
             print("That's not a number. ")
