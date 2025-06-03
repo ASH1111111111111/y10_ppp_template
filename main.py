@@ -10,7 +10,6 @@ def bullett_chamber():
 
 def number_of_bulletts(level_of_difficulty, chamber):
     i = 1
-    b
     while level_of_difficulty != True:
         if level_of_difficulty == '1':
             chamber.append(i, 1)
@@ -41,5 +40,5 @@ def intro():
     pass
 
 
-difficulty()
-number_of_bulletts()
+level_of_difficulty = difficulty()
+number_of_bulletts(level_of_difficulty, bullett_chamber)
