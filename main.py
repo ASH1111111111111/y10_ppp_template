@@ -104,6 +104,9 @@ def risky():
     main_game()
     
 def main_game():
+    global hit_or_stand
+    global bot_lives
+    global player_lives
     print("I have already told you the rules of the games. ")
     print("Now Let's begin")
     
@@ -126,11 +129,20 @@ def main_game():
         while valid_input == False:
             print("Just say either 'hit' or 'stand' you idiot you bufoon")
             hit_or_stand = input("Do you want to hit or stand")
+    
 
+def chamber():
 
+    chamber == "blank","blank","blank","blank","blank","blank"
+    for randint in range(1):
+        chamber = "full"
+        if chamber == "full" and hit_or_stand.lower() == "hit":
+            bot_lives - 1 in randint
+        elif chamber == "full" and hit_or_stand.lower() == "stand":
+            player_lives - 1 in randint
+        elif chamber == "full" and hit_or_stand.lower() == "stand":
+            pass
             
-    for randit in range(1):
-        chamber = 1
      
     
     
