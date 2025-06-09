@@ -18,6 +18,8 @@ def greeting():
         print_letter_by_letter("Very well, let's begin")
     elif comfirm_begin.lower() == "no":
         print_letter_by_letter("You intolerate buffoon, wasting my time. Back to where you come from")
+        print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        quit()
     else:
         print_letter_by_letter("I don't speak this language wit thy tounge. Either say yes or no like a normal person would. You impertinent fool! ")
         print_letter_by_letter("If you fail again, I'm going to banish you from this world.")
