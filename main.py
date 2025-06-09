@@ -30,10 +30,13 @@ def bad_greeting():
 def rules():
     print("The rules of russian roulete is ⬇️")
     print("1.You will be going against the master of russian roulete AKA me. ")
-    print("2. So hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
+    print("2. Tou can either hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
     print("3. We will go in turns. You will always go first as you are our guest. ")
     print("4. You and I will both have 3 lives, everytime you get shot you will lose 1 life.")
     print("5. First person to lose all their lives, loses.")
+    print("If you win, You will be held as king and I will be banished from this world. ")
+    print("If I win, you will be banished from this world and I will continue to rule over the land.")
+    print("----------------------------------------------------------------------------------------------------------------------------------------------")
     
 def terms_and_conditions():
     print("                                                                                             ")
@@ -115,7 +118,7 @@ def main_game():
     bot_lives = 3
     player_lives = 3
     
-    chamber = 6
+    the_chamber = 6
     
     valid_input = False
     hit_or_stand = input("Do you want to hit or stand")
@@ -134,14 +137,26 @@ def main_game():
 def chamber():
 
     chamber == "blank","blank","blank","blank","blank","blank"
-    for randint in range(1):
-        chamber = "full"
-        if chamber == "full" and hit_or_stand.lower() == "hit":
-            bot_lives - 1 in randint
-        elif chamber == "full" and hit_or_stand.lower() == "stand":
-            player_lives - 1 in randint
-        elif chamber == "full" and hit_or_stand.lower() == "stand":
-            pass
+    for bullets in chamber:
+        if bullets == "blank":
+            chamber = "blank"
+        elif bullets == "full":
+            chamber = "full"
+    print("The chamber has been loaded")
+    if chamber == "full" and hit_or_stand.lower() == "hit":
+        print("You shot me, that was just luck")
+        bot_lives - 1
+    elif chamber == "full" and hit_or_stand.lower() == "stand":
+        print("You shot yourself, you fool")
+        player_lives - 1
+    elif chamber == "blank" and hit_or_stand.lower() == "stand":
+        print("You stood, nothing happened, little lucky son of a biscuit")
+    elif chamber == "blank" and hit_or_stand.lower() == "hit":
+        print("You hit me, but I was lucky ... I mean skillful and didn't get shot")
+    else:
+        print("Something went wrong, you must have cheated, you fool")
+        print("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        quit()
             
      
     
