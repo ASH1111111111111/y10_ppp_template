@@ -133,6 +133,7 @@ def main_game():
     global bot_lives
     global player_lives
     print_letter_by_letter("I have already told you the rules of the games. ")
+    print("")
     print_letter_by_letter("Now Let's begin")
     
     
