@@ -38,7 +38,7 @@ def bad_greeting():
         print_letter_by_letter("Very well, took you a while but your tiny brain got there in the end.")
     else:
         print_letter_by_letter("To the streets of hell you go.")
-        print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
 
@@ -76,7 +76,7 @@ def terms_and_conditions():
         signature = input("Please sign here to comfirm. ")
         print_letter_by_letter(f"Very well {signature}. Let's begin.")
     else:
-        print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
 def choose_mode():
@@ -113,7 +113,7 @@ def choose_mode():
         risky()
     else:
         print_letter_by_letter("Another idiot wasting my time. ")
-        print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
 def safe():
@@ -192,7 +192,7 @@ def resolve_outcome(chamber_result):
         
     else:
         print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-        print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
     if bot_lives <= 0:
@@ -206,7 +206,7 @@ def resolve_outcome(chamber_result):
             print_letter_by_letter("You will never be able to escape me, I will always be there in your dreams. ")
         else:
             print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-            print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
             quit()
 
     
@@ -221,7 +221,7 @@ def resolve_outcome(chamber_result):
             print_letter_by_letter("I will haunt you forever, you will never be able to escape me, I will always be there in your dreams. ")
         else:
             print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-            print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
             quit()
     else:
         print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
