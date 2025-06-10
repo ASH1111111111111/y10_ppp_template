@@ -78,14 +78,19 @@ def terms_and_conditions():
 def choose_mode():
     global mode_chosen
     
+    print("")
     print_letter_by_letter("Now that you must choose a mode. Safe or Risky.")
     print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter("Here are the differences.")
+    print("")
+    sleep(0.7)
     print_letter_by_letter("Safe mode")
+    print("")
     print_letter_by_letter("In safe mode, If you win, your screen will flash rainbow for a few seonds only.")
     print_letter_by_letter("But if you die. It will simply say that you've died.")
     print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter("Risky mode")
+    print("")
     print_letter_by_letter("I won't give so much detail, but all I will say the higher the difficulty, the higher reward but also the higher concequence.")
     print("----------------------------------------------------------------------------------------------------------------")
     mode_chosen = input("So. What mode do you choose, safe or risky. ")
