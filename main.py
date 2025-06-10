@@ -184,6 +184,7 @@ def resolve_outcome(chamber_result):
         print_letter_by_letter("You hit me, but I was lucky ... I mean skillful and didn't get shot.")
     elif chamber_result == "blank" and hit_or_stand.lower() == "stand":
         print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
+        
     else:
         print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
         print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
