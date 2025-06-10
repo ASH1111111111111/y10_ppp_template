@@ -64,7 +64,7 @@ def terms_and_conditions():
     print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter(" ")
     print_letter_by_letter("Would you like to accept these terms of conditons? ")
-    proceed = input("Please answer as yes. Anything else entered will result in you being banished")
+    proceed = input("Please answer as yes. Anything else entered will result in you being banished ")
     if proceed.lower() == "yes":
         signature = input("Please sign here to comfirm. ")
         print_letter_by_letter(f"Very well {signature}. Let's begin.")
@@ -133,7 +133,7 @@ def main_game():
     the_chamber = ["blank"] * 6
     
     valid_input = False
-    hit_or_stand = input("Do you want to hit or stand")
+    hit_or_stand = input("Do you want to hit or stand: ")
     if hit_or_stand.lower() == "hit":
         valid_input = True
         print_letter_by_letter("Wanna just play it safe, fair enough")
@@ -143,7 +143,7 @@ def main_game():
     else: 
         while valid_input == False:
             print_letter_by_letter("Just say either 'hit' or 'stand' you idiot you buffoon")
-            hit_or_stand = input("Do you want to hit or stand")
+            hit_or_stand = input("Do you want to hit or stand ")
     
     chamber_result = chamber(the_chamber)
     resolve_outcome(chamber_result)
