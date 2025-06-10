@@ -204,6 +204,7 @@ def resolve_outcome(chamber_result):
             print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
             print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
             quit()
+        
     
     elif player_lives <= 0:
         print_letter_by_letter("You have lost, you are a disgrace to this land.")
