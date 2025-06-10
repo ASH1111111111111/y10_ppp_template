@@ -44,7 +44,7 @@ def rules():
     print(" ")
     print_letter_by_letter("The rules of russian roulette are ⬇️")
     print_letter_by_letter("1.You will be going against the master of russian roulette AKA me. ")
-    print_letter_by_letter("2. Tou can either hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
+    print_letter_by_letter("2. You can either hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
     print_letter_by_letter("3. We will go in turns. You will always go first as you are our guest. ")
     print_letter_by_letter("4. You and I will both have 3 lives, everytime you get shot you will lose 1 life.")
     print_letter_by_letter("5. First person to lose all their lives, loses.")
