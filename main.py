@@ -48,8 +48,8 @@ def rules():
     print_letter_by_letter("3. We will go in turns. You will always go first as you are our guest. ")
     print_letter_by_letter("4. You and I will both have 3 lives, everytime you get shot you will lose 1 life.")
     print_letter_by_letter("5. First person to lose all their lives, loses.")
-    print_letter_by_letter("If you win, You will be held as king and I will be banished from this world. ")
-    print_letter_by_letter("If I win, you will be banished from this world and I will continue to rule over the land.")
+    print_letter_by_letter("   If you win, You will be held as king and I will be banished from this world. ")
+    print_letter_by_letter("   If I win, you will be banished from this world and I will continue to rule over the land.")
     print("")
     print("----------------------------------------------------------------------------------------------------------------")
     
