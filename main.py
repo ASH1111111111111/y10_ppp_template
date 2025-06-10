@@ -195,17 +195,7 @@ def resolve_outcome(chamber_result):
         print_letter_by_letter("You have won, you are the king of this land now.")
         if mode_chosen.lower() == "safe":
             print_letter_by_letter("Your screen will now flash rainbow for a few seconds")
-            for _ in range(5):
-                print("\033[1;31;47m" + " " * 50 + "\033[0m")
-                sleep(0.2)
-                print("\033[1;32;47m" + " " * 50 + "\033[0m")
-                sleep(0.2)
-                print("\033[1;33;47m" + " " * 50 + "\033[0m")
-                sleep(0.2)
-                print("\033[1;34;47m" + " " * 50 + "\033[0m")
-                sleep(0.2)
-                print("\033[1;35;47m" + " " * 50 + "\033[0m")
-                sleep(0.2)
+            
         elif mode_chosen.lower() == "risky":
             print_letter_by_letter("You have won, you are the king of this land now.")
             print_letter_by_letter("But I will not let you go so easily, I will haunt you forever. ")
