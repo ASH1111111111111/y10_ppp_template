@@ -95,12 +95,14 @@ def choose_mode():
     print("----------------------------------------------------------------------------------------------------------------")
     mode_chosen = input("So. What mode do you choose, safe or risky. ")
     if mode_chosen.lower() == "safe":
+        print("")
         print_letter_by_letter("I see that you don't got the guts to play risky.")
         print_letter_by_letter("But I guess I'll understand since you're just a mortal being.")
         sleep(0.7)
         safe()
         
     elif mode_chosen.lower() == "risky":
+        print("")
         print_letter_by_letter("You've got guts")
         print_letter_by_letter("And I like that.")
         sleep(0.7)
