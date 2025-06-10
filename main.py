@@ -6,7 +6,7 @@ from random import choice
 
 def print_letter_by_letter(text, delay=0.05):
     for char in text:
-        print(char, end='', flush=True) # flush is used to ensure that the output is printed immediately
+        print(char, end='', flush=True)
         sleep(delay)
     print()
 
@@ -39,8 +39,10 @@ def bad_greeting():
 
 
 def rules():
+    print("")
     print("----------------------------------------------------------------------------------------------------------------")
-    print_letter_by_letter("The rules of russian roulette is ⬇️")
+    print(" ")
+    print_letter_by_letter("The rules of russian roulette are ⬇️")
     print_letter_by_letter("1.You will be going against the master of russian roulette AKA me. ")
     print_letter_by_letter("2. Tou can either hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
     print_letter_by_letter("3. We will go in turns. You will always go first as you are our guest. ")
@@ -48,10 +50,11 @@ def rules():
     print_letter_by_letter("5. First person to lose all their lives, loses.")
     print_letter_by_letter("If you win, You will be held as king and I will be banished from this world. ")
     print_letter_by_letter("If I win, you will be banished from this world and I will continue to rule over the land.")
+    print("")
     print("----------------------------------------------------------------------------------------------------------------")
     
 def terms_and_conditions():
-    print("                                                                                             ")
+
     print("                                                                                             ")
     print_letter_by_letter("Here are the terms and conditions ⬇️")
     print_letter_by_letter("1. You must follow the rules of the game. Any rules not followed will result in an immediate ban. ")
