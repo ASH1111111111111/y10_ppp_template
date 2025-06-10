@@ -170,7 +170,7 @@ def resolve_outcome(chamber_result):
     global player_lives
     global hit_or_stand
     
-    
+
     if chamber_result == "full" and hit_or_stand.lower() == "hit":
         print_letter_by_letter("You shot me, that was just luck")
         bot_lives -= 1
@@ -186,9 +186,11 @@ def resolve_outcome(chamber_result):
         print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
-
-
-
+    if bot_lives <= 0:
+        print_letter_by_letter("You have won, you are the king of this land now.")
+        if mode_chosen.lower() == "safe":
+            print_letter_by_letter("Your screen will now flash rainbow for a few seconds")
+        
 
 
 
