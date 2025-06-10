@@ -241,6 +241,8 @@ def bot_turn():
     global hit_or_stand
     
     the_chamber = ["blank"] * 6
+
+
     
     hit_or_stand = choice(["hit", "stand"])
     
