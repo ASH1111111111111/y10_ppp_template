@@ -3,6 +3,7 @@ from random import randint
 from random import choice
 
 
+
 def print_letter_by_letter(text, delay=0.05):
     for char in text:
         print(char, end='', flush=True) # flush is used to ensure that the output is printed immediately
