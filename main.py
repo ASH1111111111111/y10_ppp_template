@@ -2,7 +2,7 @@ from time import sleep
 from random import randint
 from random import choice
 from colorama import Back, Fore, Style
-
+import simple_colors
 
 
 def print_letter_by_letter(text, delay=0.05):
