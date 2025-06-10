@@ -177,6 +177,7 @@ def resolve_outcome(chamber_result):
     if chamber_result == "full" and hit_or_stand.lower() == "hit":
         print_letter_by_letter("You shot me, that was just luck")
         bot_lives -= 1
+    
     elif chamber_result == "full" and hit_or_stand.lower() == "stand":
         print_letter_by_letter("You shot yourself, you idiot")
         player_lives -= 1
