@@ -14,7 +14,7 @@ def print_letter_by_letter(text, delay=0.05):
 
 def greeting():
 
-    print(Back.CYAN  * 10)
+
 
     print_letter_by_letter("Hello There")
     print_letter_by_letter("It seems that you've decided to challenge me to a duel in russian roulette")
