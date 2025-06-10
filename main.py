@@ -39,6 +39,7 @@ def bad_greeting():
 
 
 def rules():
+    print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter("The rules of russian roulette is ⬇️")
     print_letter_by_letter("1.You will be going against the master of russian roulette AKA me. ")
     print_letter_by_letter("2. Tou can either hit, meaning you can shoot me or you can stand, which makes you shoot yourself")
