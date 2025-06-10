@@ -193,6 +193,66 @@ def resolve_outcome(chamber_result):
         print_letter_by_letter("You have won, you are the king of this land now.")
         if mode_chosen.lower() == "safe":
             print_letter_by_letter("Your screen will now flash rainbow for a few seconds")
+            for _ in range(5):
+                print("\033[1;31;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+                print("\033[1;32;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+                print("\033[1;33;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+                print("\033[1;34;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+                print("\033[1;35;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+        elif mode_chosen.lower() == "risky":
+            print_letter_by_letter("You have won, you are the king of this land now.")
+            print_letter_by_letter("But I will not let you go so easily, I will haunt you forever. ")
+            print_letter_by_letter("You will never be able to escape me, I will always be there in your dreams. ")
+        else:
+            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
+            print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            quit()
+    elif player_lives <= 0:
+        print_letter_by_letter("You have lost, you are a disgrace to this land.")
+        if mode_chosen.lower() == "safe":
+            print_letter_by_letter("Your screen will now flash red for a few seconds")
+            for _ in range(5):
+                print("\033[1;31;47m" + " " * 50 + "\033[0m")
+                sleep(0.2)
+        elif mode_chosen.lower() == "risky":
+            print_letter_by_letter("You have lost, you are a disgrace to this land.")
+            print_letter_by_letter("I will haunt you forever, you will never be able to escape me, I will always be there in your dreams. ")
+        else:
+            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
+            print_letter_by_letter("*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            quit()
+    else:
+        print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
+        print_letter_by_letter("Now it's my turn to shoot you, let's see if you are lucky or not.")
+        sleep(1)
+        
+        bot_turn()
+def bot_turn():
+    global bot_lives
+    global player_lives
+    global hit_or_stand
+    
+    the_chamber = ["blank"] * 6
+    
+    hit_or_stand = choice(["hit", "stand"])
+    
+    if hit_or_stand == "hit":
+        print_letter_by_letter("I have chosen to hit you, let's see if you are lucky or not.")
+    else:
+        print_letter_by_letter("I have chosen to stand, let's see if you are lucky or not.")
+    
+    chamber_result = chamber(the_chamber)
+    resolve_outcome(chamber_result)
+    if bot_lives <= 0 or player_lives <= 0:
+        return
+    else:
+        main_game()
+
         
 
 
