@@ -1,6 +1,5 @@
 from time import sleep
-from random import randint
-from random import choice
+from random import randint, choice
 from colorama import Back, Fore, Style
 
 
@@ -147,18 +146,19 @@ def main_game():
     
     the_chamber = ["blank"] * 6
     
-    valid_input = False
-    hit_or_stand = input("Do you want to hit or stand: ")
-    if hit_or_stand.lower() == "hit":
-        valid_input = True
-        print_letter_by_letter("Wanna just play it safe, fair enough")
-    elif hit_or_stand.lower() == "stand":
-        valid_input = True
-        print_letter_by_letter("Wanna play it risky eh")
-    else: 
-        while valid_input == False:
+    while True:
+        valid_input = False
+        hit_or_stand = input("Do you want to hit or stand: ")
+        if hit_or_stand.lower() == "hit":
+            valid_input = True
+            print_letter_by_letter("Wanna just play it safe, fair enough")
+            break
+        elif hit_or_stand.lower() == "stand":
+            valid_input = True
+            print_letter_by_letter("Wanna play it risky eh")
+            break
+        else: 
             print_letter_by_letter("Just say either 'hit' or 'stand' you idiot you buffoon")
-            hit_or_stand = input("Do you want to hit or stand ")
     
     chamber_result = chamber(the_chamber)
     resolve_outcome(chamber_result)
