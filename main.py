@@ -1,14 +1,16 @@
 from time import sleep
 from random import randint, choice
 from colorama import Back, Fore, Style
+import google
 
-
+print(google)
 
 def print_letter_by_letter(text, delay=0.05):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
     print()
+
 
 
 def greeting():
