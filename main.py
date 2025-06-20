@@ -228,6 +228,53 @@ def resolve_outcome(chamber_result):
         print_letter_by_letter("Now it's my turn to shoot you, let's see if you are lucky or not.")
         sleep(1)
         
+        bot_turn()
+def bot_turn():
+    global bot_lives
+    global player_lives
+    global hit_or_stand
+    
+    the_chamber = ["blank"] * 6
+
+
+    
+    hit_or_stand = choice(["hit", "stand"])
+    
+    if hit_or_stand == "hit":
+        print_letter_by_letter("I have chosen to hit you, let's see if you are lucky or not.")
+    else:
+        print_letter_by_letter("I have chosen to stand, let's see if you are lucky or not.")
+    
+    chamber_result = chamber(the_chamber)
+    resolve_outcome(chamber_result)
+    if bot_lives <= 0 or player_lives <= 0:
+        return
+    else:
+        main_game()
+
+
+def player_turn():
+    global bot_lives
+    global player_lives
+    global hit_or_stand
+    
+    the_chamber = ["blank"] * 6
+
+
+    
+    hit_or_stand = choice(["hit", "stand"])
+    
+    if hit_or_stand == "hit":
+        print_letter_by_letter("You've decided to hit I see")
+    else:
+        print_letter_by_letter("You've chosen to stand, ")
+    
+    chamber_result = chamber(the_chamber)
+    resolve_outcome(chamber_result)
+    if bot_lives <= 0 or player_lives <= 0:
+        return
+    else:
+        main_game()
 
 
         
