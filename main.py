@@ -267,7 +267,7 @@ def player_turn():
     if hit_or_stand == "hit":
         print_letter_by_letter("You've decided to hit I see")
     else:
-        print_letter_by_letter("You've chosen to stand, ")
+        print_letter_by_letter("You've chosen to stand, let's see if fate is on your side ")
     
     chamber_result = chamber(the_chamber)
     resolve_outcome(chamber_result)
