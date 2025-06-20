@@ -184,7 +184,7 @@ def resolve_outcome(chamber_result):
     
     elif chamber_result == "full" and hit_or_stand.lower() == "stand":
         print_letter_by_letter("You shot yourself, you idiot")
-        player_lives -= 1
+        bot_lives -= 1
     elif chamber_result == "blank" and hit_or_stand.lower() == "hit":
         print_letter_by_letter("You hit me, but I was lucky ... I mean skillful and didn't get shot.")
     elif chamber_result == "blank" and hit_or_stand.lower() == "stand":
