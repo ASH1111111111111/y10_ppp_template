@@ -181,12 +181,12 @@ def chamber():
     print_letter_by_letter("The chamber has been loaded")
     return the_chamber[bullet_position]
 
-def resolve_outcome(chamber_result, action):
+def resolve_outcome(chamber_result, action, is_player_turn):
     global bot_lives
     global player_lives
 
     
-    if player_turn:
+    if is_player_turn:
         if chamber_result == "full" and action == "hit":
             print_letter_by_letter("You shot me, that was just luck")
             bot_lives -= 1
@@ -205,7 +205,7 @@ def resolve_outcome(chamber_result, action):
 
         print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
 
-    elif bot_turn:
+    else:
         if chamber_result == "full" and action == "hit":
             print_letter_by_letter("Aha, I've shot you, that was all skill")
             player_lives -= 1
