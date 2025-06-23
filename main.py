@@ -211,7 +211,7 @@ def resolve_outcome(chamber_result, action):
             player_lives -= 1
         elif chamber_result == "full" and action == "stand":
             print_letter_by_letter("Ow, I shot myself, well that was on purporse because I'm just better")
-            player_lives -= 1
+            bot_lives -= 1
         elif chamber_result == "blank" and action == "hit":
             print_letter_by_letter("That gun is rigged you know")
         elif chamber_result == "blank" and action == "stand":
