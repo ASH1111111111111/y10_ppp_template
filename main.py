@@ -5,7 +5,7 @@ from colorama import Back, Fore, Style
 
 
 
-def print_letter_by_letter(text, delay=0.0):
+def print_letter_by_letter(text, delay=0.05):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
