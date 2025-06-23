@@ -207,15 +207,15 @@ def resolve_outcome(chamber_result, action):
 
     elif bot_turn:
         if chamber_result == "full" and action == "hit":
-            print_letter_by_letter("You shot me, that was just luck")
-            bot_lives -= 1
+            print_letter_by_letter("Aha, I've shot you, that was all skill")
+            player_lives -= 1
         elif chamber_result == "full" and action == "stand":
-            print_letter_by_letter("Ha Ha, I new it, you silly little mortal")
+            print_letter_by_letter("Ow, I shot myself, well that was on purporse because I'm just better")
             player_lives -= 1
         elif chamber_result == "blank" and action == "hit":
-            print_letter_by_letter("You really tried? I was lucky ... I mean skillful and didn't get shot.")
+            print_letter_by_letter("That gun is rigged you know")
         elif chamber_result == "blank" and action == "stand":
-            print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
+            print_letter_by_letter("I shot my self, and nothing happened. I'm so sigma.")
             
         else:
             print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
