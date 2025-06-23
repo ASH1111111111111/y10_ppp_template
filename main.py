@@ -1,9 +1,9 @@
 from time import sleep
 from random import randint, choice
 from colorama import Back, Fore, Style
-import google
 
-print(google)
+
+
 
 def print_letter_by_letter(text, delay=0.05):
     for char in text:
@@ -84,21 +84,21 @@ def choose_mode():
     global mode_chosen
     
     print("")
-    print_letter_by_letter("Now that you must choose a mode. Safe or Risky.")
+    print_letter_by_letter("Now you must choose a mode. Safe or Risky.")
     print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter("Here are the differences.")
     print("")
     sleep(0.7)
-    print_letter_by_letter("Safe mode")
+    print_letter_by_letter(Fore.GREEN + "Safe mode")
     print("")
-    print_letter_by_letter("In safe mode, If you win, your screen will flash rainbow for a few seonds only.")
-    print_letter_by_letter("But if you die. It will simply say that you've died.")
+    print_letter_by_letter(Fore.GREEN + "In safe mode, If you win, your screen will flash rainbow for a few seonds only.")
+    print_letter_by_letter(Fore.GREEN + "But if you die. It will simply say that you've died.")
     print("----------------------------------------------------------------------------------------------------------------")
-    print_letter_by_letter("Risky mode")
+    print_letter_by_letter(Fore.LIGHTRED_EX + "Risky mode")
     print("")
-    print_letter_by_letter("I won't give so much detail, but all I will say the higher the difficulty, the higher reward but also the higher concequence.")
+    print_letter_by_letter(Fore.LIGHTRED_EX + "I won't give so much detail, but all I will say the higher the difficulty, the higher reward but also the higher concequence.")
     print("----------------------------------------------------------------------------------------------------------------")
-    mode_chosen = input("So. What mode do you choose, safe or risky. ")
+    mode_chosen = input(Fore.RESET + "So. What mode do you choose, safe or risky. ")
     if mode_chosen.lower() == "safe":
         print("")
         print_letter_by_letter("I see that you don't got the guts to play risky.")
@@ -136,7 +136,7 @@ def risky():
 def main_game():
     global hit_or_stand
     global bot_lives
-    global player_lives
+
     print_letter_by_letter("I have already told you the rules of the games. ")
     print("")
     print_letter_by_letter("Now Let's begin")
@@ -146,57 +146,11 @@ def main_game():
     bot_lives = 3
     player_lives = 3
     
-    the_chamber = ["blank"] * 6
-    
-    while True:
-        valid_input = False
-        hit_or_stand = input("Do you want to hit or stand: ")
-        if hit_or_stand.lower() == "hit":
-            valid_input = True
-            print_letter_by_letter("Wanna just play it safe, fair enough")
+    while player_lives > 0 and bot_lives > 0:
+        player_turn()
+        if bot_lives <= 0:
             break
-        elif hit_or_stand.lower() == "stand":
-            valid_input = True
-            print_letter_by_letter("Wanna play it risky eh")
-            break
-        else: 
-            print_letter_by_letter("Just say either 'hit' or 'stand' you idiot you buffoon")
-    
-    chamber_result = chamber(the_chamber)
-    resolve_outcome(chamber_result)
-
-
-def chamber(the_chamber):
-
-    bullet_position = choice(range(6))
-    the_chamber[bullet_position] = "full"
-
-    print_letter_by_letter("The chamber has been loaded")
-    return the_chamber[bullet_position]
-
-def resolve_outcome(chamber_result):
-    global bot_lives
-    global player_lives
-    global hit_or_stand
-    
-
-    if chamber_result == "full" and hit_or_stand.lower() == "hit":
-        print_letter_by_letter("You shot me, that was just luck")
-        bot_lives -= 1
-    
-    elif chamber_result == "full" and hit_or_stand.lower() == "stand":
-        print_letter_by_letter("Ouch, that was just unlucky")
-        bot_lives -= 1
-    elif chamber_result == "blank" and hit_or_stand.lower() == "hit":
-        print_letter_by_letter("You hit me, but I was lucky ... I mean skillful and didn't get shot.")
-    elif chamber_result == "blank" and hit_or_stand.lower() == "stand":
-        print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
-        
-    else:
-        print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
-        quit()
-
+        bot_turn()
     if bot_lives <= 0:
         print_letter_by_letter("You have won, you are the king of this land now.")
         if mode_chosen.lower() == "safe":
@@ -206,12 +160,6 @@ def resolve_outcome(chamber_result):
             print_letter_by_letter("You have won, you are the king of this land now.")
             print_letter_by_letter("But I will not let you go so easily, I will haunt you forever. ")
             print_letter_by_letter("You will never be able to escape me, I will always be there in your dreams. ")
-        else:
-            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
-            quit()
-
-    
     elif player_lives <= 0:
         print_letter_by_letter("You have lost, you are a disgrace to this land.")
         if mode_chosen.lower() == "safe":
@@ -221,63 +169,67 @@ def resolve_outcome(chamber_result):
         elif mode_chosen.lower() == "risky":
             print_letter_by_letter("You have lost, you are a disgrace to this land.")
             print_letter_by_letter("I will haunt you forever, you will never be able to escape me, I will always be there in your dreams. ")
-        else:
-            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
-            quit()
-    else:
-        print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
-        print_letter_by_letter("Now it's my turn to shoot you, let's see if you are lucky or not.")
-        sleep(1)
+          
         
-        bot_turn()
-def bot_turn():
+
+def chamber():
+
+    the_chamber = ["blank"] * 6
+    bullet_position = choice(range(6))
+    the_chamber[bullet_position] = "full"
+    print_letter_by_letter("The chamber has been loaded")
+    return the_chamber[bullet_position]
+
+def resolve_outcome(chamber_result, action):
     global bot_lives
     global player_lives
-    global hit_or_stand
-    
-    the_chamber = ["blank"] * 6
-
 
     
-    hit_or_stand = choice(["hit", "stand"])
-    
-    if hit_or_stand == "hit":
-        print_letter_by_letter("I have chosen to hit you, let's see if you are lucky or not.")
+
+    if chamber_result == "full" and action == "hit":
+        print_letter_by_letter("You shot me, that was just luck")
+        bot_lives -= 1
+    elif chamber_result == "full" and action == "stand":
+        print_letter_by_letter("Ouch, that was just unlucky")
+        player_lives -= 1
+    elif chamber_result == "blank" and action == "hit":
+        print_letter_by_letter("You hit me, but I was lucky ... I mean skillful and didn't get shot.")
+    elif chamber_result == "blank" and action == "stand":
+        print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
+        
     else:
-        print_letter_by_letter("I have chosen to stand, let's see if you are lucky or not.")
-    
-    chamber_result = chamber(the_chamber)
-    resolve_outcome(chamber_result)
-    if bot_lives <= 0 or player_lives <= 0:
-        return
-    else:
-        main_game()
+        print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
+        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+        quit()
 
+    print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
+    
+        
 
 def player_turn():
-    global bot_lives
-    global player_lives
-    global hit_or_stand
-    
-    the_chamber = ["blank"] * 6
+    valid_input = False
+    while not valid_input:
+        hit_or_stand = input("Do you want to hit or stand: ")
+        if hit_or_stand.lower() in ["hit", "stand"]:
+            valid_input = True
+            chamber_result = chamber()
+            resolve_outcome(chamber_result, hit_or_stand.lower())
+        else:
+            print_letter_by_letter("Just say hit or stand you idiot")
 
 
-    
+
+def bot_turn():
+
     hit_or_stand = choice(["hit", "stand"])
-    
     if hit_or_stand == "hit":
-        print_letter_by_letter("You've decided to hit I see")
+        print_letter_by_letter("I have decided to hit, Lets see if fate is on your side")
     else:
-        print_letter_by_letter("You've chosen to stand, let's see if fate is on your side ")
+        print_letter_by_letter("I have choosen to stand, I know I'm safe")
     
-    chamber_result = chamber(the_chamber)
-    resolve_outcome(chamber_result)
-    if bot_lives <= 0 or player_lives <= 0:
-        return
-    else:
-        main_game()
-
+    chamber_result = chamber()
+    resolve_outcome(chamber_result, hit_or_stand)
+   
 
         
 
