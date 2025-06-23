@@ -233,7 +233,7 @@ def player_turn():
         if hit_or_stand.lower() in ["hit", "stand"]:
             valid_input = True
             chamber_result = chamber()
-            resolve_outcome(chamber_result, hit_or_stand.lower())
+            resolve_outcome(chamber_result, hit_or_stand.lower(), is_player_turn=())
         else:
             print_letter_by_letter("Just say hit or stand you idiot")
 
@@ -248,7 +248,7 @@ def bot_turn():
         print_letter_by_letter("I have choosen to stand, I know I'm safe")
     
     chamber_result = chamber()
-    resolve_outcome(chamber_result, hit_or_stand)
+    resolve_outcome(chamber_result, hit_or_stand, False)
    
 
         
