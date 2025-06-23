@@ -1,11 +1,43 @@
+import os
+import platform
 from time import sleep
 from random import randint, choice
-from colorama import Back, Fore, Style
+from colorama import Fore, Back, Style, init
+
+init()
+
+def flash_rainbow():
+    rainbow_colours = [
+        Back.RED,
+        Back.YELLOW,
+        Back.GREEN,
+        Back.CYAN,
+        Back.BLUE,
+        Back.MAGENTA,
+    ]
+
+    for i in range(1000):
+        for colour in rainbow_colours:
+            print(colour + " " * 10000, end='\r' )
+            sleep(0.1)
+            print(Style.RESET_ALL)
 
 
+def forced_shutdown():
+    print_letter_by_letter(Fore.RED + "YOU HAVE LOST. YOUR COMPUTER IS SHUTTING DOWN IN 5 SECONDS")
+    last_request = input("Do you accept this like a True man? Click Enter if you accept, otherwise type anything to cancel it.")
+    if last_request == "":
+        if platform.system() == "Windows":
+            os.system("shutdown /s /t 1")
+        elif platform.system() == "Darwin":
+            os.system("shutdown -h now")
+        else:
+            print_letter_by_letter("I was testing you like a true man. But if you really want to have the full expierence, run this code in the MAC OS terminal or the Command prompt on WINDOWS OS")
+    else:
+        print("You are a coward you dissapointment")
+        quit()
 
-
-def print_letter_by_letter(text, delay=0.05):
+def print_letter_by_letter(text, delay=0.00005):
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
@@ -68,6 +100,7 @@ def terms_and_conditions():
     print_letter_by_letter("4. Later depending on your further choices, somethings may change to your display")
     print_letter_by_letter("5. Things may be said to you which may emotionally harm you, which could lead you to harm yourself phyically.")
     print_letter_by_letter("This will not be ou fault. And please do not harm yourself. If you need help, please call +852 2343 2255 ")
+    print_letter_by_letter("Any Data lost will not be our fault")
     print_letter_by_letter(" ")
     print("----------------------------------------------------------------------------------------------------------------")
     print_letter_by_letter(" ")
@@ -155,31 +188,37 @@ def main_game():
     if bot_lives <= 0:
         print_letter_by_letter("You have won, you are the king of this land now.")
         if mode_chosen.lower() == "safe":
-            print_letter_by_letter("Your screen will now flash rainbow for a few seconds")
+            sleep(0.1)
+            flash_rainbow()
             
         elif mode_chosen.lower() == "risky":
             print_letter_by_letter("You have won, you are the king of this land now.")
             print_letter_by_letter("But I will not let you go so easily, I will haunt you forever. ")
             print_letter_by_letter("You will never be able to escape me, I will always be there in your dreams. ")
+            flash_rainbow()
+            sleep(0.3)
     elif player_lives <= 0:
         print_letter_by_letter("You have lost, you are a disgrace to this land.")
         if mode_chosen.lower() == "safe":
-            print_letter_by_letter("Your screen will now flash red for a few seconds")
+            red_flash = [Back.RED]
+            for i in range(1000):
+                for colour in red_flash:
+                    print(colour + " " * 1000, end='\r' )
+                    sleep(0.1)
+                    print(Style.RESET_ALL)
+
             for _ in range(5):
                 sleep(0.2)
         elif mode_chosen.lower() == "risky":
             print_letter_by_letter("You have lost, you are a disgrace to this land.")
             print_letter_by_letter("I will haunt you forever, you will never be able to escape me, I will always be there in your dreams. ")
+            forced_shutdown()
           
         
 
 def chamber():
 
-    the_chamber = ["blank"] * 6
-    bullet_position = choice(range(6))
-    the_chamber[bullet_position] = "full"
-    print_letter_by_letter("The chamber has been loaded")
-    return the_chamber[bullet_position]
+    return choice(["full", "blank"])
 
 def resolve_outcome(chamber_result, action, is_player_turn):
     global bot_lives
