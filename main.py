@@ -97,8 +97,8 @@ def choose_mode():
     print_letter_by_letter(Fore.LIGHTRED_EX + "Risky mode")
     print("")
     print_letter_by_letter(Fore.LIGHTRED_EX + "I won't give so much detail, but all I will say the higher the difficulty, the higher reward but also the higher concequence.")
-    print("----------------------------------------------------------------------------------------------------------------")
-    mode_chosen = input(Fore.RESET + "So. What mode do you choose, safe or risky. ")
+    print(Fore.RESET + "----------------------------------------------------------------------------------------------------------------")
+    mode_chosen = input("So. What mode do you choose, safe or risky. ")
     if mode_chosen.lower() == "safe":
         print("")
         print_letter_by_letter("I see that you don't got the guts to play risky.")
