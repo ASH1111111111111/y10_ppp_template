@@ -136,6 +136,7 @@ def risky():
 def main_game():
     global hit_or_stand
     global bot_lives
+    global player_lives
 
     print_letter_by_letter("I have already told you the rules of the games. ")
     print("")
@@ -185,24 +186,43 @@ def resolve_outcome(chamber_result, action):
     global player_lives
 
     
+    if player_turn:
+        if chamber_result == "full" and action == "hit":
+            print_letter_by_letter("You shot me, that was just luck")
+            bot_lives -= 1
+        elif chamber_result == "full" and action == "stand":
+            print_letter_by_letter("Ha Ha, I new it, you silly little mortal")
+            player_lives -= 1
+        elif chamber_result == "blank" and action == "hit":
+            print_letter_by_letter("You really tried? I was lucky ... I mean skillful and didn't get shot.")
+        elif chamber_result == "blank" and action == "stand":
+            print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
+            
+        else:
+            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
+            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            quit()
 
-    if chamber_result == "full" and action == "hit":
-        print_letter_by_letter("You shot me, that was just luck")
-        bot_lives -= 1
-    elif chamber_result == "full" and action == "stand":
-        print_letter_by_letter("Ouch, that was just unlucky")
-        player_lives -= 1
-    elif chamber_result == "blank" and action == "hit":
-        print_letter_by_letter("You hit me, but I was lucky ... I mean skillful and didn't get shot.")
-    elif chamber_result == "blank" and action == "stand":
-        print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
-        
-    else:
-        print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
-        print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
-        quit()
+        print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
 
-    print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
+    elif bot_turn:
+        if chamber_result == "full" and action == "hit":
+            print_letter_by_letter("You shot me, that was just luck")
+            bot_lives -= 1
+        elif chamber_result == "full" and action == "stand":
+            print_letter_by_letter("Ha Ha, I new it, you silly little mortal")
+            player_lives -= 1
+        elif chamber_result == "blank" and action == "hit":
+            print_letter_by_letter("You really tried? I was lucky ... I mean skillful and didn't get shot.")
+        elif chamber_result == "blank" and action == "stand":
+            print_letter_by_letter("You stood, nothing happened, little lucky son of a biscuit.")
+            
+        else:
+            print_letter_by_letter("Something went wrong, you idiot. You should never have come here in the first place.")
+            print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
+            quit()
+
+        print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
     
         
 
