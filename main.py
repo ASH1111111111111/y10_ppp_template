@@ -235,7 +235,7 @@ def resolve_outcome(chamber_result, action, is_player_turn):
     global bot_lives
     global player_lives
 
-    # checks if it's the players turn and 
+    # checks if it's the players turn and compares the chamber result and action
     if is_player_turn:
         if chamber_result == "full" and action == "hit":
             print_letter_by_letter("You shot me, that was just luck")
@@ -254,7 +254,7 @@ def resolve_outcome(chamber_result, action, is_player_turn):
             quit()
 
         print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
-
+# checks if it's the bots turn and compares the chamber result and action
     else:
         if chamber_result == "full" and action == "hit":
             print_letter_by_letter("Aha, I've shot you, that was all skill")
@@ -275,7 +275,7 @@ def resolve_outcome(chamber_result, action, is_player_turn):
         print_letter_by_letter(f"You have {player_lives} lives left, I have {bot_lives} lives left.")
     
         
-
+    # When it's the players turn, it will go through this part of the code
 def player_turn():
     valid_input = False
     while not valid_input:
@@ -288,7 +288,7 @@ def player_turn():
             print_letter_by_letter("Just say hit or stand you idiot")
 
 
-
+# When it's the bots turn, it will go through this part of the code
 def bot_turn():
 
     hit_or_stand = choice(["hit", "stand"])
@@ -327,9 +327,11 @@ def bot_turn():
 
 
 
-
+# Just calling the routines :)
 
 greeting()
 rules()
 terms_and_conditions()
 choose_mode()
+
+# good boy
