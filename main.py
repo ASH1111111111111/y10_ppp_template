@@ -32,7 +32,8 @@ def forced_shutdown():
         if platform.system() == "Windows": # Checks if your os system is windows
             os.system("shutdown /s /t 1") # shuts down your computer for windows "/s" initates a shut down. And "/t 1" gives it a 1 second delay before shutdown
         elif platform.system() == "Darwin":# checks if your os system is Mac OS
-            os.system("sudo shutdown -h now") # Shuts down your computer for MAC
+            os.system("sudo shutdown -h now") # Shuts down your computer for Mac. "-h now" shuts down the computer immideatly. And "sudo" gives the program more privliges
+                                             # which is espically a big problem for Mac
         else:
             print_letter_by_letter("I was testing you like a true man. But if you really want to have the full expierence, run this code in the MAC OS terminal or the Command prompt on WINDOWS OS")
     else:
