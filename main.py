@@ -30,7 +30,7 @@ def forced_shutdown():
     last_request = input("Do you accept this like a True man? Click Enter if you accept, otherwise type anything to cancel it.")
     if last_request == "":
         if platform.system() == "Windows": # Checks if your os system is windows
-            os.system("shutdown /s /t 1") # shuts down your computer for windows
+            os.system("shutdown /s /t 1") # shuts down your computer for windows "/s" initates a shut down. And "/t 1" gives it a 1 second delay before shutdown
         elif platform.system() == "Darwin":# checks if your os system is Mac OS
             os.system("sudo shutdown -h now")
         else:
