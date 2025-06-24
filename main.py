@@ -66,7 +66,7 @@ def greeting():
         print_letter_by_letter("If you fail again, I'm going to banish you from this world.")
         
         bad_greeting()
-        # if the user says neither yes nor no. 
+        # if the user says neither yes nor no. It will give the user one more chance, if they fail again, they will be banished
 def bad_greeting():
     print_letter_by_letter("So, will you continue and possibly shine amongst the light, or drown within the depths of the ocean.")
     comfirm_begin = input("Are you going to battle me? ")
@@ -77,7 +77,7 @@ def bad_greeting():
         print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
-
+# the rules
 def rules():
     print("")
     print("----------------------------------------------------------------------------------------------------------------")
@@ -93,6 +93,7 @@ def rules():
     print("")
     print("----------------------------------------------------------------------------------------------------------------")
     
+    #the terms and conditions
 def terms_and_conditions():
 
     print("                                                                                             ")
