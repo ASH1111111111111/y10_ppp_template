@@ -111,12 +111,14 @@ def terms_and_conditions():
     print_letter_by_letter("Would you like to accept these terms of conditons? ")
     proceed = input("Please answer as yes. Anything else entered will result in you being banished ")
     if proceed.lower() == "yes":
+        # asks user to sign if they want to continue
         signature = input("Please sign here to comfirm. ")
         print_letter_by_letter(f"Very well {signature}. Let's begin.")
     else:
         print_letter_by_letter(Fore.RED  + "*YOU HAVE BEEN BANISHED FROM THIS WORLD*")
         quit()
 
+# helps user choose mode
 def choose_mode():
     global mode_chosen
     
