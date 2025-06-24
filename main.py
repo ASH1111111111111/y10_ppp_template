@@ -226,7 +226,7 @@ def main_game():
             forced_shutdown()
           
         
-
+# randomly chooses between full and blank for what's in the chamber
 def chamber():
 
     return choice(["full", "blank"])
