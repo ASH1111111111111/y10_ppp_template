@@ -41,13 +41,13 @@ def forced_shutdown():
         quit()
 # funcion that has a delay everytime a word is ouputed in a terminal
 def print_letter_by_letter(text, delay=0.05): # the number fo seconds that eac character is delayed
-    for char in text:
-        print(char, end='', flush=True)
+    for char in text: 
+        print(char, end='', flush=True) # flush makes sure that there is a delay
         sleep(delay)
     print()
 
 
-
+# greets the user
 def greeting():
 
 
@@ -66,7 +66,7 @@ def greeting():
         print_letter_by_letter("If you fail again, I'm going to banish you from this world.")
         
         bad_greeting()
-        
+        # if the user says neither yes nor no. 
 def bad_greeting():
     print_letter_by_letter("So, will you continue and possibly shine amongst the light, or drown within the depths of the ocean.")
     comfirm_begin = input("Are you going to battle me? ")
