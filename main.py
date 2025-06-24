@@ -5,8 +5,9 @@ from random import randint, choice
 from colorama import Fore, Back, Style, init
 
 init()
-
+## flashes rainbow colours in the terminal when you win
 def flash_rainbow():
+    #list of all colours that will flash in the rainbow.
     rainbow_colours = [
         Back.RED,
         Back.YELLOW,
@@ -15,21 +16,22 @@ def flash_rainbow():
         Back.BLUE,
         Back.MAGENTA,
     ]
-
+    # loop that will flash the colours in the terminal
     for i in range(1000):
         for colour in rainbow_colours:
             print(colour + " " * 10000, end='\r' )
             sleep(0.1)
             print(Style.RESET_ALL)
 
-
+# funcion that shuts down computer when the user loses in risky mode
 def forced_shutdown():
     print_letter_by_letter(Fore.RED + "YOU HAVE LOST. YOUR COMPUTER IS SHUTTING DOWN IN 5 SECONDS")
+    sleep(3)
     last_request = input("Do you accept this like a True man? Click Enter if you accept, otherwise type anything to cancel it.")
     if last_request == "":
-        if platform.system() == "Windows":
-            os.system("shutdown /s /t 1")
-        elif platform.system() == "Darwin":
+        if platform.system() == "Windows": # Checks if your os system is windows
+            os.system("shutdown /s /t 1") # shuts down your computer for windows
+        elif platform.system() == "Darwin":# checks if your os system is Mac OS
             os.system("sudo shutdown -h now")
         else:
             print_letter_by_letter("I was testing you like a true man. But if you really want to have the full expierence, run this code in the MAC OS terminal or the Command prompt on WINDOWS OS")
