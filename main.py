@@ -235,7 +235,7 @@ def resolve_outcome(chamber_result, action, is_player_turn):
     global bot_lives
     global player_lives
 
-    
+    # checks if it's the players turn and 
     if is_player_turn:
         if chamber_result == "full" and action == "hit":
             print_letter_by_letter("You shot me, that was just luck")
