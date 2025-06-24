@@ -38,6 +38,7 @@ def forced_shutdown():
             print_letter_by_letter("I was testing you like a true man. But if you really want to have the full expierence, run this code in the MAC OS terminal or the Command prompt on WINDOWS OS")
     else:
         print("You are a coward you dissapointment")
+        print_letter_by_letter("Goodybye ")
         quit()
 # funcion that has a delay everytime a word is ouputed in a terminal
 def print_letter_by_letter(text, delay=0.05): # the number fo seconds that eac character is delayed
