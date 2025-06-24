@@ -183,10 +183,11 @@ def main_game():
     print_letter_by_letter("Now Let's begin")
     
     
-    
+    # constants which are the lives of the player and bot
     bot_lives = 3
     player_lives = 3
     
+    # checks if 
     while player_lives > 0 and bot_lives > 0:
         player_turn()
         if bot_lives <= 0:
