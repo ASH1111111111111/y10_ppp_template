@@ -39,8 +39,8 @@ def forced_shutdown():
     else:
         print("You are a coward you dissapointment")
         quit()
-
-def print_letter_by_letter(text, delay=0.000005):
+# funcion that has a delay everytime a word is ouputed in a terminal
+def print_letter_by_letter(text, delay=0.05): 
     for char in text:
         print(char, end='', flush=True)
         sleep(delay)
