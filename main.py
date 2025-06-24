@@ -30,7 +30,7 @@ def forced_shutdown():
         if platform.system() == "Windows":
             os.system("shutdown /s /t 1")
         elif platform.system() == "Darwin":
-            os.system("shutdown -h now")
+            os.system("sudo shutdown -h now")
         else:
             print_letter_by_letter("I was testing you like a true man. But if you really want to have the full expierence, run this code in the MAC OS terminal or the Command prompt on WINDOWS OS")
     else:
