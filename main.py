@@ -187,14 +187,16 @@ def main_game():
     bot_lives = 3
     player_lives = 3
     
-    # checks if 
+    # the player goes first. Checks id the player and bot lives are above 0
     while player_lives > 0 and bot_lives > 0:
         player_turn()
         if bot_lives <= 0:
             break
         bot_turn()
+        # checks if the player has won
     if bot_lives <= 0:
         print_letter_by_letter("You have won, you are the king of this land now.")
+        #checks what mode she choose
         if mode_chosen.lower() == "safe":
             sleep(0.1)
             flash_rainbow()
