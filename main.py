@@ -196,7 +196,7 @@ def main_game():
         # checks if the player has won
     if bot_lives <= 0:
         print_letter_by_letter("You have won, you are the king of this land now.")
-        #checks what mode she choose
+        #checks what mode the user has choose
         if mode_chosen.lower() == "safe":
             sleep(0.1)
             flash_rainbow()
@@ -207,6 +207,7 @@ def main_game():
             print_letter_by_letter("You will never be able to escape me, I will always be there in your dreams. ")
             flash_rainbow()
             sleep(0.3)
+            # checks if bot has won
     elif player_lives <= 0:
         print_letter_by_letter("You have lost, you are a disgrace to this land.")
         if mode_chosen.lower() == "safe":
