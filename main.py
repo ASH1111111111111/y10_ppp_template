@@ -172,7 +172,7 @@ def risky():
     sleep(0.7)
     
     main_game()
-    
+    # subroutine where the user gets to make their own desesions
 def main_game():
     global hit_or_stand
     global bot_lives
